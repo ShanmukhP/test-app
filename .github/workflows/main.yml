@@ -15,8 +15,8 @@ jobs:
       - name: Update Repositories
         run: sudo apt-get update
         
-      - name: Install autoconf  
-        run: sudo apt-get install autoconf -y
+      - name: Reinstall autoconf  
+        run: sudo apt-get remove autoconf && sudo apt-get install autoconf
       
       - name: Install autopoint
         run: sudo apt-get install autopoint -y
