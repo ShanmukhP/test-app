@@ -10,7 +10,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+      
+      - name: Install autopoint
+        run: sudo apt-get install autopoint -y
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
