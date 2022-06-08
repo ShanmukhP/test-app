@@ -24,6 +24,12 @@ jobs:
       - name: Installing third set of dependencies
         run: sudo apt-get install -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev
         
+      - name: Installing Cython
+        run: pip install cython
+        
+      - name: Installing cmake
+        run: sudo pip install cmake
+      
       - name: Reinstall autoconf  
         run: sudo apt-get remove autoconf && sudo apt-get install autoconf
         
