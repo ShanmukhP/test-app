@@ -12,6 +12,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: Installing dependencies
+        run: apt update -qq > /dev/null && \
+             apt install -qq --yes --no-install-recommends \
+             autoconf \
+             automake \
+             autopoint \  
+             build-essential \
+             ccache \
+             cmake \
+             gettext \
+             git \
+             libffi-dev \
+             libltdl-dev \
+             libssl-dev \
+             liblzma-dev \   
+             libtool \
+             openjdk-8-jdk \
+             patch \
+             pkg-config \
+             python3-pip \
+             python3-setuptools \
+             sudo \
+             unzip \
+             zip \
+             zlib1g-dev
+        
       - name: Update Repositories
         run: sudo apt-get update
         
