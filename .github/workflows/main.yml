@@ -17,6 +17,12 @@ jobs:
         
       - name: Reinstall autoconf  
         run: sudo apt-get remove autoconf && sudo apt-get install autoconf
+        
+      - name: Installing libtool
+        run: sudo apt install autoconf libtool -y
+        
+      - name: Installing automake
+        run: sudo apt-get install automake -y
       
       - name: Install autopoint
         run: sudo apt-get install autopoint -y
