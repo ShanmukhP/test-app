@@ -6,7 +6,7 @@ title = My Application
 # (str) Package name
 package.name = myapp
 
-# (str) Package domain (needed for android/ios packaging)
+# (str) Package domain (needed for android/ios packaging) 
 package.domain = org.test
 
 # (str) Source code where the main.py live
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python==3.9.7,kivy==2.0.0,kivymd,cython,cmake,numpy==1.20.3,pandas,imutils,opencv,dlib,sklearn,playsound
+requirements = python==3.9.7,kivy==2.0.0,kivymd,cython,cmake,numpy==1.20.3,pandas,imutils,opencv,dlib,sklearn,playsound,gettext,autopoint
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
