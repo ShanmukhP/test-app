@@ -12,9 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Printing File Utils file
-        run: sudo cat /usr/share/autoconf/Autom4te/FileUtils.pm
-        
       - name: Update Repositories
         run: sudo apt-get update
         
@@ -31,7 +28,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          workdir: . #<specify the directory of the app no don't mention this the app files are in root directory>
+          workdir: ../.
           buildozer_version: stable
 
       - name: Upload artifacts
