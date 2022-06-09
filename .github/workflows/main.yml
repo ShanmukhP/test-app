@@ -47,6 +47,15 @@ jobs:
         
       - name: Install gettext
         run: apt-get install gettext -y
+        
+      - name: Printing path
+        run: echo $PATH
+        
+      - name: Checking autopoint
+        run: whereis autopoint
+        
+      - name: Checking autoconf
+        run: whereis autoconf
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
