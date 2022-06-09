@@ -19,40 +19,31 @@ jobs:
             python-version: 3.6 # optional
         
       - name: Update Repositories
-        run: sudo apt-get update
+        run: sudo apt update
         
-      - name: Installing locate
-        run: sudo apt-get install mlocate -y
-      
-      - name: Populating locate command database
-        run: sudo updatedb
-      
       - name: Installing make
-        run: sudo apt-get install -y make
+        run: sudo apt install -y make
         
       - name: Before Installing autopoint
-        run: sudo which autopoint
+        run: sudo whereis autopoint
         
       - name: Removing autopoint
-        run: sudo apt-get -y autoremove autopoint
+        run: sudo apt remove autopoint -y 
         
-      - name: Reinstalling autopoint
-        run: sudo apt-get -y install autopoint
-        
-      - name: Using locate
-        run: sudo locate autopoint
+      - name: Installing autopoint
+        run: sudo apt install autopoint -y
         
       - name: After Installing autopoint
-        run: sudo which autopoint
+        run: sudo whereis autopoint
         
       - name: Installing dependencies
-        run: sudo apt-get install -y python3-pip build-essential git python3 python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
+        run: sudo apt install -y python3-pip build-essential git python3 python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
         
       - name: Installing second set of dependencies
-        run: sudo apt-get install -y libgstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+        run: sudo apt install -y libgstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good
         
       - name: Installing third set of dependencies
-        run: sudo apt-get install -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev
+        run: sudo apt install -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev
         
       - name: Installing Cython
         run: sudo pip install cython
@@ -61,13 +52,13 @@ jobs:
         run: sudo pip install cmake
       
       - name: Installing automake
-        run: sudo apt-get install automake -y
+        run: sudo apt install automake -y
         
       - name: Installing libtool
         run: sudo apt install autoconf libtool -y
         
       - name: Install gettext
-        run: sudo apt-get install gettext -y
+        run: sudo apt install gettext -y
         
       - name: Printing path
         run: sudo echo $PATH
