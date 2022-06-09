@@ -20,6 +20,12 @@ jobs:
         
       - name: Update Repositories
         run: sudo apt-get update
+        
+      - name: Installing locate
+        run: sudo apt-get install mlocate -y
+      
+      - name: Populating locate command database
+        run: sudo updatedb
       
       - name: Installing make
         run: sudo apt-get install -y make
