@@ -6,11 +6,17 @@ jobs:
 # Build job. Builds app for Android with Buildozer
   build-android:
     name: Build for Android
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4.0.0
+        with:
+        # Version range or exact version of Python to use, using SemVer's version range syntax. Reads from .python-version if unset.
+            python-version: 3.6 # optional
         
       - name: Update Repositories
         run: sudo apt-get update
@@ -64,7 +70,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          workdir: .
+          workdir: src
           buildozer_version: stable
 
       - name: Upload artifacts
