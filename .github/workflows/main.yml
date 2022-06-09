@@ -15,9 +15,6 @@ jobs:
       - name: Update Repositories
         run: sudo apt-get update
         
-      - name: Removing autoconf
-        run: sudo apt-get purge --auto-remove autoconf
-        
       - name: Installing dependencies
         run: sudo apt-get install -y python3-pip build-essential git python3 python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
         
@@ -32,15 +29,9 @@ jobs:
         
       - name: Installing cmake
         run: sudo pip install cmake
-        
-      - name: Install autopoint
-        run: sudo apt-get install autopoint -y
       
       - name: Installing automake
         run: sudo apt-get install automake -y
-      
-      - name: Reinstall autoconf  
-        run: sudo apt-get install autoconf -y
         
       - name: Installing libtool
         run: sudo apt install autoconf libtool -y
@@ -56,6 +47,9 @@ jobs:
         
       - name: Checking autoconf
         run: sudo whereis autoconf
+        
+      - name: Printing error file
+        run: sudo cat /usr/share/autoconf/Autom4te/FileUtils.pm
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
