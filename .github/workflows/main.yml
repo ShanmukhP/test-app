@@ -29,9 +29,12 @@ jobs:
         
       - name: Installing cmake
         run: sudo pip install cmake
+        
+      - name: Removing autoreconf
+        run: sudo apt-get purge --auto-remove autoconf
       
       - name: Reinstall autoconf  
-        run: sudo apt-get remove autoconf && sudo apt-get install autoconf
+        run: sudo apt-get install autoconf
         
       - name: Installing libtool
         run: sudo apt install autoconf libtool -y
